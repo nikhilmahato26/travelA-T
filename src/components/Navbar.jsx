@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { brand, navLinks } from "../data/siteContent";
-import logo from "../assets/logo-transparent.png";
+import logoDark from "../assets/logo-transparent.png";
+import logoLight from "../assets/logo-light.png";
 import { FiPhone, FiMenu, FiX } from "react-icons/fi";
 
 export default function Navbar() {
@@ -52,25 +53,13 @@ export default function Navbar() {
             <a
               href="#hero"
               onClick={(e) => { e.preventDefault(); handleNav("#hero"); }}
-              className={`flex items-center gap-3 focus:outline-none px-2.5 py-1.5 transition-all duration-300 rounded-sm ${
-                scrolled
-                  ? "bg-transparent"
-                  : "bg-navy-950/30 border border-gold-400/20 backdrop-blur-md"
-              }`}
+              className="flex items-center focus:outline-none transition-all duration-300 py-1 group"
             >
               <img
-                src={logo}
+                src={scrolled ? logoDark : logoLight}
                 alt={brand.name}
-                className="h-12 md:h-14 w-12 md:w-14 rounded-full object-cover border border-gold-400/40 shadow-sm"
+                className="h-12 md:h-16 w-auto object-contain transition-all duration-300 group-hover:scale-105"
               />
-              <div className={`hidden sm:block transition-colors duration-300 ${scrolled ? "text-navy-950" : "text-white"}`}>
-                <div className="text-[11px] font-semibold tracking-[0.22em] uppercase text-gold-400">
-                  Travel with
-                </div>
-                <div className="font-display font-bold text-xl leading-none tracking-wider text-gradient-gold">
-                  A & T
-                </div>
-              </div>
             </a>
 
             {/* Desktop nav */}

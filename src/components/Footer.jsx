@@ -1,6 +1,6 @@
 import React from "react";
 import { brand, navLinks } from "../data/siteContent";
-import logo from "../assets/logo-transparent.png";
+import logoLight from "../assets/logo-light.png";
 import { FiPhone, FiMail, FiMapPin, FiInstagram, FiFacebook, FiYoutube } from "react-icons/fi";
 
 export default function Footer() {
@@ -14,20 +14,12 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3.5 mb-5">
+            <div className="mb-5">
               <img
-                src={logo}
+                src={logoLight}
                 alt={brand.name}
-                className="h-14 w-14 rounded-full object-cover border border-gold-400/40 shadow-sm"
+                className="h-14 md:h-16 w-auto object-contain"
               />
-              <div>
-                <div className="text-[11px] font-semibold tracking-[0.22em] uppercase text-gold-400">
-                  Travel with
-                </div>
-                <div className="font-display font-bold text-xl leading-none tracking-wider text-gradient-gold">
-                  A & T
-                </div>
-              </div>
             </div>
             <p className="text-navy-300 text-sm leading-relaxed mb-5">
               Premier travel company crafting extraordinary journeys. With our Head Office in Delhi and Branch Office in Srinagar (Jammu & Kashmir), we curate seamless travel experiences across India and the globe.
