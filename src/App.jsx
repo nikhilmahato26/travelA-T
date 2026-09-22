@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar";
 import Hero from "./sections/Hero";
 import Packages from "./sections/Packages";
 import Services from "./sections/Services";
-import Hotels from "./sections/Hotels";
 import About from "./sections/About";
 import Testimonials from "./sections/Testimonials";
 import FAQ from "./sections/FAQ";
@@ -28,7 +27,6 @@ export default function App() {
         <Hero />
         <Packages />
         <Services />
-        <Hotels />
         <About />
         <CTAStrip />
         <Testimonials />
