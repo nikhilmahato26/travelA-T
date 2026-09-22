@@ -28,8 +28,8 @@ export default function About() {
             <div className="relative">
               <div className="relative z-10 overflow-hidden shadow-navy">
                 <img
-                  src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=800&q=80"
-                  alt="Travel experts at Travel with A & T"
+                  src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1200&q=85"
+                  alt="Dal Lake Shikara - Travel with A & T Srinagar Kashmir"
                   className="w-full h-80 lg:h-96 object-cover"
                   loading="lazy"
                 />
@@ -44,8 +44,8 @@ export default function About() {
                 className="absolute -bottom-8 -right-6 w-44 h-32 overflow-hidden border-4 border-white shadow-navy z-20"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=400&q=80"
-                  alt="Happy travellers"
+                  src="https://images.pexels.com/photos/14974761/pexels-photo-14974761.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  alt="Gulmarg snow paradise Kashmir"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />

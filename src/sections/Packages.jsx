@@ -21,7 +21,7 @@ const badgeColors = {
 };
 
 const fallbackImage =
-  "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600&q=80";
+  "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1200&q=80";
 
 export default function Packages() {
   const [activeCategory, setActiveCategory] = useState("All");

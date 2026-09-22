@@ -1,12 +1,25 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { hero, brand } from "../data/siteContent";
 import { FiArrowRight, FiMessageSquare } from "react-icons/fi";
 
 const heroImages = [
-  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=85",
-  "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=1600&q=85",
-  "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1600&q=85",
+  {
+    url: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1920&q=85",
+    alt: "Shikara Boat at Sunrise on Dal Lake Srinagar Kashmir",
+  },
+  {
+    url: "https://images.pexels.com/photos/14974761/pexels-photo-14974761.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    alt: "Gulmarg Apharwat Peak Snow Paradise Kashmir",
+  },
+  {
+    url: "https://images.pexels.com/photos/36100089/pexels-photo-36100089.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    alt: "Pahalgam Betaab Valley Mountain Pine Vistas Kashmir",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=1920&q=85",
+    alt: "Dal Lake Reflections and Heritage Houseboats Kashmir",
+  },
 ];
 
 const stagger = {
@@ -20,21 +33,37 @@ const fadeUp = {
 };
 
 export default function Hero() {
+  const [currentIdx, setCurrentIdx] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIdx((prev) => (prev + 1) % heroImages.length);
+    }, 6500);
+    return () => clearInterval(timer);
+  }, []);
+
   const whatsappUrl = `https://wa.me/${brand.whatsapp}?text=${encodeURIComponent(brand.tagline + " – I'd like to explore holiday packages!")}`;
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background image with overlay */}
+      {/* Background image with overlay and smooth crossfade */}
       <div className="absolute inset-0">
-        <img
-          src={heroImages[0]}
-          alt="Luxury travel destination"
-          className="w-full h-full object-cover"
-          loading="eager"
-        />
+        <AnimatePresence mode="sync">
+          <motion.img
+            key={currentIdx}
+            src={heroImages[currentIdx].url}
+            alt={heroImages[currentIdx].alt}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
+            className="absolute inset-0 w-full h-full object-cover"
+            loading="eager"
+          />
+        </AnimatePresence>
         {/* Layered overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-900/75 to-navy-800/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-950/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-900/75 to-navy-800/40 z-[1]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-950/60 via-transparent to-transparent z-[1]" />
       </div>
 
       {/* Decorative elements */}

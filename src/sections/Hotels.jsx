@@ -48,6 +48,9 @@ export default function Hotels() {
                   alt={hotel.name}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1200&q=80";
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/20 to-transparent" />
 
