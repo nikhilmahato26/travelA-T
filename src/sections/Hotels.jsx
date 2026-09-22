@@ -8,7 +8,7 @@ import { FiMapPin, FiArrowRight } from "react-icons/fi";
 export default function Hotels() {
   const handleEnquire = (hotel) => {
     const msg = encodeURIComponent(
-      `Hi! I'm interested in *${hotel.name}* (${hotel.location}) at ${hotel.pricePerNight}/night. Please share availability and booking details.`
+      `Hi! I'm interested in *${hotel.name}* (${hotel.location}). Please share availability, rates, and booking details.`
     );
     window.open(`https://wa.me/${brand.whatsapp}?text=${msg}`, "_blank");
   };
@@ -19,15 +19,15 @@ export default function Hotels() {
         {/* Header */}
         <ScrollReveal>
           <div className="text-center mb-14">
-            <span className="section-label text-gold-400">Luxury Accommodations</span>
+            <span className="section-label text-gold-400">Kashmir Luxury Stays</span>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
-              Stay Where Every Room
+              Handpicked Resorts &
               <br />
-              <span className="text-gradient-gold">Tells a Story</span>
+              <span className="text-gradient-gold">Heritage Houseboats</span>
             </h2>
             <div className="gold-divider mx-auto" />
             <p className="text-navy-300 text-base max-w-xl mx-auto mt-4">
-              We partner with India's finest hotels and resorts to offer you unbeatable rates and exclusive perks.
+              From Gulmarg's premier ski resorts and royal Dal Lake palaces to carved cedar houseboats on Nigeen Lake, enjoy exclusive local rates curated by our Srinagar team.
             </p>
           </div>
         </ScrollReveal>
@@ -95,14 +95,14 @@ export default function Hotels() {
                   )}
                 </div>
 
-                {/* Price + CTA */}
+                {/* Pricing info + CTA */}
                 <div className="flex items-center justify-between pt-4 border-t border-navy-800">
                   <div>
-                    <p className="text-navy-400 text-xs mb-0.5">From</p>
-                    <p className="font-display font-bold text-xl text-gold-400">
-                      {hotel.pricePerNight}
+                    <p className="text-navy-400 text-xs mb-0.5">Pricing</p>
+                    <p className="font-display font-bold text-base text-gold-400">
+                      On Request
                     </p>
-                    <p className="text-navy-400 text-xs">per night</p>
+                    <p className="text-navy-400 text-xs">Best local rates</p>
                   </div>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
@@ -110,7 +110,7 @@ export default function Hotels() {
                     onClick={() => handleEnquire(hotel)}
                     className="flex items-center gap-1.5 px-4 py-2.5 bg-gold-gradient text-navy-900 text-xs font-bold tracking-wide uppercase hover:shadow-gold transition-all duration-200"
                   >
-                    Book Now
+                    Enquire Now
                     <FiArrowRight size={12} />
                   </motion.button>
                 </div>
@@ -123,12 +123,12 @@ export default function Hotels() {
         <ScrollReveal delay={0.2}>
           <div className="text-center mt-12">
             <p className="text-navy-400 text-sm mb-4">
-              ✦ All hotel bookings include complimentary travel insurance consultation ✦
+              ✦ All hotel and houseboat stays include verified sanitization, complimentary morning Kahwa & transfers ✦
             </p>
             <a href="#contact"
               onClick={(e) => { e.preventDefault(); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}
               className="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-gold-500 text-gold-400 font-semibold text-sm tracking-wider uppercase transition-all duration-300 hover:bg-gold-500 hover:text-navy-900">
-              Request Hotel Package
+              Request Hotel & Houseboat Rates
             </a>
           </div>
         </ScrollReveal>

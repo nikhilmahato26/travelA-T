@@ -3,17 +3,21 @@ import { holidayPackages, brand } from "../data/siteContent";
 import { FiClock, FiMapPin, FiArrowRight } from "react-icons/fi";
 import { FaStar } from "react-icons/fa";
 
-const categories = ["All", "Domestic", "International", "Pilgrimage"];
+const categories = ["All", "Popular", "Honeymoon", "Family", "Adventure", "Offbeat"];
 
 const badgeColors = {
-  "Best Seller": "bg-gold-500 text-navy-900",
-  "Popular": "bg-navy-700 text-white",
-  "Trending": "bg-amber-warm text-white",
-  "Premium": "bg-navy-900 text-gold-400",
-  "Luxury": "bg-gold-gradient text-navy-900",
-  "Hot Deal": "bg-amber-fire text-white",
-  "Spiritual": "bg-indigo-700 text-white",
-  "Adventure": "bg-green-700 text-white",
+  "Best Seller": "bg-gold-500 text-navy-950",
+  "Popular": "bg-navy-800 text-white",
+  "Romantic": "bg-rose-800 text-white",
+  "Snow & Ski": "bg-sky-800 text-white",
+  "Scenic": "bg-emerald-800 text-white",
+  "Heritage": "bg-amber-800 text-white",
+  "Hidden Gem": "bg-teal-800 text-white",
+  "Offbeat": "bg-emerald-900 text-white",
+  "Family Special": "bg-navy-900 text-gold-400",
+  "Spiritual": "bg-orange-800 text-white",
+  "Autumn Special": "bg-amber-700 text-white",
+  "Winter Magic": "bg-cyan-900 text-white",
 };
 
 const fallbackImage =
@@ -33,7 +37,7 @@ export default function Packages() {
 
   const handleEnquire = (pkg) => {
     const msg = encodeURIComponent(
-      `Hi! I'm interested in the *${pkg.destination}* package (${pkg.duration}). Please share more details.`
+      `Hi! I'm interested in the *${pkg.destination}* Kashmir package (${pkg.duration}). Please share the detailed itinerary and quote.`
     );
     window.open(`https://wa.me/${brand.whatsapp}?text=${msg}`, "_blank");
   };
@@ -42,15 +46,15 @@ export default function Packages() {
     <section id="packages" className="py-20 lg:py-28 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <span className="section-label">Holiday Packages</span>
+          <span className="section-label">Kashmir Tour Packages</span>
           <h2 className="section-heading mb-4">
-            Curated Journeys,
+            Heaven on Earth,
             <br />
-            <span className="text-gradient-gold">Unforgettable Memories</span>
+            <span className="text-gradient-gold">Curated by Local Experts</span>
           </h2>
           <div className="gold-divider mx-auto" />
-          <p className="text-navy-600 text-base max-w-xl mx-auto mt-4">
-            From 4 Dham Yatra and Manali tours to international holidays, pick a package or ask us to build one for you.
+          <p className="text-navy-600 text-base max-w-2xl mx-auto mt-4">
+            From tranquil Dal Lake houseboats and Gulmarg snow peaks to Lidder river valleys in Pahalgam and offbeat Gurez — curated directly by our Srinagar branch office.
           </p>
         </div>
 
@@ -59,10 +63,10 @@ export default function Packages() {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-5 py-2 text-sm font-semibold tracking-wide transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-navy-400 ${
+              className={`px-5 py-2 text-sm font-semibold tracking-wide transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gold-400 ${
                 activeCategory === cat
                   ? "bg-navy-900 text-white"
-                  : "bg-white text-navy-600 border border-gray-200 hover:border-navy-400"
+                  : "bg-white text-navy-600 border border-gray-200 hover:border-gold-500"
               }`}
             >
               {cat}
@@ -155,7 +159,7 @@ export default function Packages() {
 
         <div className="text-center mt-12">
           <p className="text-navy-500 text-sm mb-4">
-            Don't see your destination? We create fully custom packages.
+            Planning a custom Kashmir itinerary, luxury houseboat stay, or private taxi transfer?
           </p>
           <a
             href="#contact"
@@ -165,7 +169,7 @@ export default function Packages() {
             }}
             className="btn-outline"
           >
-            Request Custom Package
+            Request Custom Kashmir Package
           </a>
         </div>
       </div>

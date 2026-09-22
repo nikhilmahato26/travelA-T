@@ -15,9 +15,16 @@ const initialForm = {
 };
 
 const destinations = [
-  "Goa", "Kerala", "Rajasthan", "Himachal Pradesh", "Uttarakhand",
-  "Bali", "Thailand", "Maldives", "Dubai", "Singapore", "Europe",
-  "Char Dham Yatra", "Other / Custom"
+  "Complete Kashmir Paradise (All Valleys)",
+  "Srinagar (Dal Lake & Houseboat)",
+  "Gulmarg (Snow & Gondola)",
+  "Pahalgam (Betaab & Aru Valley)",
+  "Sonamarg (Glaciers & Meadows)",
+  "Gurez Valley (Offbeat Kashmir)",
+  "Doodhpathri & Yusmarg",
+  "Vaishno Devi & Kashmir Yatra",
+  "Kashmir Honeymoon Special",
+  "Other / Custom Destination",
 ];
 
 export default function ContactForm({ showToast }) {
